@@ -1,0 +1,89 @@
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Fira Sans", sans-serif;
+    font-size: 14px;
+    background-color: #FFF;
+    color: #000;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 900;
+    font-size: 48px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media screen and (max-width: 359px) {
+    body {
+        width: 300px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    body {
+        width: 360px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    body {
+        width: 576px;
+    }
+}
+
+@media screen and (min-width: 767px) {
+    body {
+        width: 767px;
+    }
+}
+
+@media screen and (min-width: 968px){
+    body {
+        width: 968px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    body {
+        width: 1024px;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    body {
+        width: 1440px;
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    body {
+        width: 1920px;
+    }
+}

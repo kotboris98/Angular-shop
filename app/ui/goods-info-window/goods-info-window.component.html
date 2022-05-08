@@ -1,0 +1,61 @@
+<article
+class="goods"
+id="background"
+(click)="closeWindow()"
+(scroll)="onBackgroundScroll($event)"
+>
+    <div class="goods__container" (click)="onWindowClick($event)">
+        <div *ngIf="isPurchaseFormShown === false">
+            <div class="goods__content">
+                <div class="goods__content-info">
+                    <img
+                    src={{goodsInfo.image}}
+                    alt="Изображение товара"
+                    class="goods__content-info-img"
+                    />
+
+                    <div class="goods__content-info-description">
+                        <h1 class="goods__content-info-description-name">{{goodsInfo.name}}</h1>
+                        <span class="goods__content-info-description-price">{{goodsInfo.price | price: "RUB"}}</span>
+                    </div>
+                </div>
+
+                <div class="goods__content-description">
+                    <h2 class="goods__content-description-title">Описание:</h2>
+                    <p class="goods__content-description-text">{{getDescription()}}</p>
+
+                    <h2 class="goods__content-description-points">Пункты выдачи:</h2>
+                    <ul *ngFor="let address of goodsInfo.addresses">
+                        <li class="goods__content-description-address">{{address.address}}</li>
+                    </ul>
+
+                    <h2 class="goods__content-description-choice">Выберите пункт выдачи:</h2>
+                </div>
+                
+                <div class="goods__content-map">
+                    <app-map 
+                    [markers]="getAddresses()"
+                    (onMarkerSelected)="onMapAddressSelected($event)"
+                    >
+                    </app-map>
+                </div>          
+            </div>
+        </div>
+
+        <app-purchase-form 
+        *ngIf="isPurchaseFormShown"
+        [goodsSelected]="goodsInfo"
+        [addressSelected]="addressSelected"
+        (formCancelled)="hidePurchaseForm()"
+        >
+        </app-purchase-form>
+    </div>
+
+    <button
+    *ngIf="isPurchaseFormShown === false"
+    class="goods__btn"
+    (click)="closeWindow()"
+    >
+        <i class='bx bx-left-arrow-alt goods__icon'></i>
+    </button>
+</article>

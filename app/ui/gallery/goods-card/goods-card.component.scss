@@ -1,0 +1,82 @@
+.card {
+    min-width: 400px;
+    min-height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    row-gap: 20px;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px;
+
+    &__container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 20px;
+        cursor: pointer;
+    }
+
+    &__img {
+        &-picture {
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 150px;
+            height: 75px;
+            transition: .3s ease-in-out;
+
+            &:hover {
+                transform: scale(calc(100% - 5%));
+            }
+        }
+    }
+
+    &__description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        row-gap: 10px;
+
+        &-name {
+            font-size: 24px;
+            font-weight: 500;
+            color: hsl(276, 52%, 58%);
+            transition: .3s ease-in-out;
+
+            &:hover {
+                color: hsl(276, 32%, 40%);
+            }
+        }
+
+        &-price {
+            font-size: 18px;
+            color: #020202;
+        }
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .card {
+        min-width: 250px;
+        min-height: 175px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .card {
+        min-width: 250px;
+        min-height: 175px;
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .card {
+        min-width: 400px;
+        min-height: 200px;
+    }
+}

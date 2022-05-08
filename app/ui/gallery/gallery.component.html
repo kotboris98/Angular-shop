@@ -1,0 +1,28 @@
+<section class="gallery" (scroll)="onGalleryScrolled()">
+    <div class="gallery__container">
+        <div class="gallery__cards" id="gallery">
+            <div *ngFor="let item of goods; index as i">
+                <app-goods-card 
+                [goodsInfo]="goods[i]"
+                (onCardSelected)="onCardSelected($event)"
+                >
+                </app-goods-card>
+            </div>
+        </div>
+
+        <button
+        *ngIf="isDataLoadingStopped" 
+        class="gallery__btn"
+        (click)="onLoadMoreButtonClick()"
+        >
+            <span>Ещё</span>
+        </button>
+    </div>
+    
+    <app-goods-info-window 
+    *ngIf="isGoodsInfoWindowShown"
+    (infoWindowClosed)="hideGoodsInfoWindow()"
+    [goodsInfo]="getSelectedGoods()"
+    >
+    </app-goods-info-window>
+</section>

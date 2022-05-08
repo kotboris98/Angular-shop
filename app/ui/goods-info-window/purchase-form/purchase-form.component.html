@@ -1,0 +1,93 @@
+<section class="purchase">
+    <div class="purchase__container">
+        <div class="purchase__info">
+            <h2 class="purchase__title">Товар: </h2>
+
+            <div class="purchase__description">
+                <span class="purchase__description-name">
+                    {{getSelectedGoods().name}}
+                </span>
+
+                <span class="purchase__description-price">
+                    {{getSelectedGoods().price | price: "RUB"}}
+                </span>
+            </div>
+        
+            <div class="purchase__address">
+                <h2 class="purchase__address-point">Выбранный адрес: </h2>
+                <span class="purchase__address-geo">{{getSelectedAddress().address}}</span>
+            </div>
+        </div>
+        
+        <div class="purchase__map">
+            <app-map 
+            [markers]="[getSelectedAddress()]" 
+            [center]="getSelectedAddress().coordinates"
+            [lockControls]="true"
+            >
+            </app-map>
+        </div>
+    
+        <form class="purchase__form" [formGroup]="purchaseForm">
+            <div class="purchase__form-field">
+                <label for="firstName" required>Имя</label>
+                <input
+                id="firstName"
+                type="text"
+                formControlName="firstName"
+                placeholder="Введите ваше Имя"
+                />
+            </div>
+        
+            <div class="purchase__form-field">
+                <label for="lastName" required>Фамилия</label>
+                <input
+                id="lastName"
+                type="text"
+                formControlName="lastName"
+                placeholder="Введите вашу Фамилию"
+                />
+            </div>
+        
+            <div class="purchase__form-field">
+                <label for="patronymic">Отчество (необяз.)</label>
+                <input
+                id="patronymic"
+                type="text"
+                formControlName="patronymic"
+                placeholder="Введите ваше Отчество"
+                />
+            </div>
+            
+            <div class="purchase__form-field">
+                <label for="phoneNumber" required>Номер телефона</label>
+                <input
+                id="phoneNumber"
+                type="number"
+                formControlName="phoneNumber"
+                placeholder="Введите ваш номер Тел."
+                />
+            </div>
+        
+            <div class="purchase__form-field" id="form-five">
+                <label for="email" required>Email</label>
+                <input
+                id="email"
+                type="text"
+                formControlName="email"
+                placeholder="Введите ваш Email"
+                />
+            </div>
+        </form>
+
+        <div class="purchase__btns">
+            <button (click)="onFormSubmit()" class="purchase__btns-btn">
+                <span>Отправить</span>
+            </button>
+
+            <button (click)="onBackButton()" class="purchase__btns-btn">
+                <span>Назад</span>
+            </button>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,326 @@
+.purchase {
+    &__container {
+        padding: 10px 20px;
+    }
+
+    &__title {
+        font-size: 32px;
+        font-weight: 900;
+        color: hsl(276, 52%, 58%);
+    }
+
+    &__description {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-top: 20px;
+        row-gap: 10px;
+
+        &-name {
+            font-size: 26px;
+            font-weight: 700;
+        }
+
+        &-price {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+
+    &__address {
+        margin-top: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        row-gap: 10px;
+
+        &-point {
+            font-size: 36px;
+            font-weight: 900;
+            text-transform: uppercase;
+        }
+
+        &-geo {
+            font-size: 18px;
+            font-weight: 500;
+        }
+    }
+
+    &__map {
+        margin-left: auto;
+        margin-right: auto;
+        width: 1000px;
+        height: 500px;
+        margin-top: 40px;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        row-gap: 10px;
+
+        &-field {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            row-gap: 10px;
+            margin-bottom: 20px;
+
+            &:nth-child(1) {
+                margin-top: 20px;
+            }
+
+            label {
+                font-size: 24px;
+                font-weight: 500;
+                cursor: default;
+            }
+
+            input {
+                width: 140;
+                height: 70px;
+                padding: 10px;
+                text-align: center;
+
+                &::placeholder {
+                    font-size: 14px;
+                    font-weight: 300;
+                    color: grey;
+                }
+            }
+        }
+    }
+
+    &__btns {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        column-gap: 20px;
+
+        &-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            color: #FFF;
+            background-color: #000;
+            width: 80px;
+            height: 40px;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: .3s ease-in-out all;
+
+            &:hover {
+                color: #000;
+                background-color: grey;
+            }
+
+            span {
+                display: block;
+                font-size: 10px;
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 359px) {
+    .purchase {
+        &__title {
+            font-size: 26px;
+        }
+
+        &__description {
+            &-name {
+                font-size: 24px;
+            }
+
+            &-price {
+                font-size: 20px;
+            }
+        }
+
+        &__address {
+            &-point {
+                font-size: 26px;
+            }
+
+            &-geo {
+                font-size: 20px;
+            }
+        }
+
+        &__map {
+            width: 200px;
+            height: 400px;
+        }
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .purchase {
+        &__title {
+            font-size: 26px;
+        }
+
+        &__description {
+            &-name {
+                font-size: 24px;
+            }
+
+            &-price {
+                font-size: 20px;
+            }
+        }
+
+        &__address {
+            &-point {
+                font-size: 26px;
+            }
+
+            &-geo {
+                font-size: 20px;
+            }
+        }
+
+        &__map {
+            width: 200px;
+            height: 400px;
+        }
+    }
+}
+
+@media screen and (min-width: 576px) {
+    .purchase {
+        &__map {
+            width: 350px;
+        }
+    }
+}
+
+@media screen and (min-width: 767px) {
+    .purchase {
+        &__map {
+            width: 450px;
+        }
+    }
+}
+
+@media screen and (min-width: 968px){
+    .purchase {
+        &__map {
+            width: 600px;
+        }
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    .purchase {
+        &__title {
+            font-size: 38px;
+        }
+
+        &__description {
+            &-name {
+                font-size: 32px;
+            }
+
+            &-price {
+                font-size: 26px;
+            }
+        }
+
+        &__address {
+            &-point {
+                font-size: 30px;
+            }
+
+            &-geo {
+                font-size: 24px;
+            }
+        }
+
+        &__map {
+            width: 800;
+            height: 600px;
+        }
+
+        &__form {
+            &-field {
+                input {
+                    width: 200px;
+                    height: 80px;
+                }
+            }
+        }
+
+        &__btns {
+            &-btn {
+                width: 120px;
+                height: 60px;
+
+                span {
+                    font-size: 16px;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1920px) {
+    .purchase {
+        &__title {
+            font-size: 44px;
+        }
+
+        &__description {
+            &-name {
+                font-size: 38px;
+            }
+
+            &-price {
+                font-size: 32px;
+            }
+        }
+
+        &__address {
+            &-point {
+                font-size: 36px;
+            }
+
+            &-geo {
+                font-size: 30px;
+            }
+        }
+
+        &__map {
+            width: 1200;
+            height: 800px;
+        }
+
+        &__form {
+            &-field {
+                input {
+                    width: 200px;
+                    height: 70px;
+                }
+            }
+        }
+
+        &__btns {
+            &-btn {
+                width: 140px;
+                height: 70px;
+
+                span {
+                    font-size: 20px;
+                }
+            }
+        }
+    }
+}

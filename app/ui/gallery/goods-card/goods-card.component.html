@@ -1,0 +1,25 @@
+<article
+class="card"
+(click)="onCardClick()"
+[class.not-loaded]="goodsInfo === null"
+>
+    <div class="card__container">
+        <div class="card__img">
+            <div
+            class="card__img-picture"
+            [ngStyle]="{'background-image': 'url(' + getGoodsInfo().image + ')'}"
+            >
+            </div>
+        </div>
+
+        <div class="card__description">
+            <span class="card__description-name">
+                {{getGoodsInfo().name | shortenName: 30}}
+            </span>
+
+            <span class="card__description-price">
+                {{getGoodsInfo().price | price: "RUB"}}
+            </span>
+        </div>
+    </div>
+</article>
